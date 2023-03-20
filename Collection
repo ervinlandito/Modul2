@@ -1,0 +1,35 @@
+package Modul2;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class Main {
+    public static void main(String[] args) {
+
+        ArrayList<String> Hewan = new ArrayList<String>();
+        Hewan.add("Sapi");
+        Hewan.add("Kelinci");
+        Hewan.add("Kambing");
+        Hewan.add("Unta");
+        Hewan.add("Domba");
+
+        ArrayList<String> DeleteHewan = new ArrayList<String>();
+        DeleteHewan.add("Kelinci");
+        DeleteHewan.add("Kambing");
+        DeleteHewan.add("Unta");
+        
+        
+        Iterator<String> iterator = Hewan.iterator();
+        while (iterator.hasNext()) {
+            String hewan = iterator.next();
+            if (DeleteHewan.contains(hewan)) {
+                iterator.remove();
+            }
+        }
+
+
+        System.out.println("Hasil objek Hewan setelah penghapusan:");
+        for (String hewan : Hewan) {
+            System.out.println(hewan);
+        }
+    }
+}
